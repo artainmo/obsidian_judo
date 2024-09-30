@@ -1,0 +1,47 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  workflow_dispatch: # This allows manual execution of the workflow.
+  push:
+    branches:
+      - main  # Triggers on push to the 'main' branch.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Ubuntu is generally faster and more cost-efficient for GitHub to run, making it the default choice. For most projects, Linux (Ubuntu) will work just fine even if developed on macOS.
+
+    steps:
+      # Step 1: Download the GitHub repository’s source code to the runner (the virtual machine where the action is being executed). Without this step, the subsequent steps wouldn't have access to the repository's code.
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # This will initialize and update submodules.
+          fetch-depth: 0 # Ensures that all commit history is fetched. Sometimes, a shallow clone can cause issues with submodules, so this ensures that full commit history is available for both the main repository and submodules.
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use personal access token, to enable private repository access, created in 'developer settings' and referenced in 'secrets and variables' of this repository.
+
+      # Step 2: Run 'make build' to create the index.md.
+      - name: Run make build
+        run: make build
+
+      # Step3: Set up Ruby environment for Jekyll.
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      # Installs the dependencies for Jekyll.
+      - name: Install Dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      # Build the Jekyll site.
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build # to generate the static site files in the '_site' folder.
+
+      # Deploy to GitHub Pages.
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # The action used to deploy to the 'gh-pages' branch. You’ll need to configure GitHub Pages to use the 'gh-pages' branch in the repository settings. (Repository -> Settings -> Pages -> Source -> Select 'gh-pages')
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # This token allows the workflow to interact with the GitHub API. The token was created in 'developer settings' and is defined in this repo settings -> secrets and variables -> actions.
+          publish_dir: ./_site
