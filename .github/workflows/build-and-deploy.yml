@@ -21,7 +21,9 @@ jobs:
 
       # Step 2: Run 'make build' to create the 'index.md'.
       - name: Run make build
-        run: make build
+        run: |
+          make build
+          rm -rf Obsidian
 
     # Set up Ruby environment
       - name: Setup Ruby
