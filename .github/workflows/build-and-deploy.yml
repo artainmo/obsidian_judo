@@ -23,25 +23,9 @@ jobs:
       - name: Run make build
         run: make build
 
-      # Step3: Set up Ruby environment for Jekyll.
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-
-      # Installs the dependencies for Jekyll.
-      - name: Install Dependencies
-        run: |
-          gem install bundler
-          bundle install
-
-      # Build the Jekyll site.
-      - name: Build Jekyll Site
-        run: bundle exec jekyll build # to generate the static site files in the '_site' folder.
-
-      # Deploy to GitHub Pages.
+      # Step 3: Deploy to GitHub Pages.
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3 # The action used to deploy to the 'gh-pages' branch. You’ll need to configure GitHub Pages to use the 'gh-pages' branch in the repository settings. (Repository -> Settings -> Pages -> Source -> Select 'gh-pages')
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # This token allows the workflow to interact with the GitHub API. The token was created in 'developer settings' and is defined in this repo settings -> secrets and variables -> actions.
-          publish_dir: ./_site
+          #publish_dir: ./_site
