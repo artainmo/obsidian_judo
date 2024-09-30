@@ -2,4 +2,4 @@ title: My Jekyll Website
 description: A website built with Jekyll and GitHub Pages
 baseurl: "/obsidian_judo" # Only if you're not using a custom domain
 url: "https://artainmo.github.io"
-theme: minima # Optional theme
+theme: Midnight # Optional theme
