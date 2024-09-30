@@ -1,0 +1,5 @@
+command:
+- convert
+config_path: config.yml
+literals:
+  -i: config.yml

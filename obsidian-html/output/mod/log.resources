@@ -1,0 +1,55 @@
+Resource log:
+-------------
+(arguments.yml, config.yml, and user_config.yml created by setup module)
+
+[2024-09-30T15:44:48.703648] process_config       read       config.yml          
+[2024-09-30T15:44:48.730077] process_config       read       arguments.yml       
+[2024-09-30T15:44:48.744710] process_config       altered    config.yml          
+[2024-09-30T15:44:48.744977] process_config       created    capabilities.json   
+[2024-09-30T15:44:48.803963] load_paths           read       config.yml          
+[2024-09-30T15:44:48.830934] load_paths           created    paths.json          
+[2024-09-30T15:44:48.858508] process_config_auto  read       config.yml          
+[2024-09-30T15:44:48.885184] process_config_auto  read       paths.json          
+[2024-09-30T15:44:48.899258] process_config_auto  altered    config.yml          
+[2024-09-30T15:44:48.927311] html_templater       read       config.yml          
+[2024-09-30T15:44:48.954484] html_templater       created    html/note.template.html
+[2024-09-30T15:44:48.954655] html_templater       stored     html_templater(HtmlTemplaterModule)/html_template
+[2024-09-30T15:44:48.954665] html_templater       stored     html_templater(HtmlTemplaterModule)/dynamic_inclusions
+[2024-09-30T15:44:48.954672] html_templater       created    html/dynamic_inclusions.html
+[2024-09-30T15:44:48.954756] html_templater       stored     html_templater(HtmlTemplaterModule)/dynamic_footer_inclusions
+[2024-09-30T15:44:48.954765] html_templater       created    html/dynamic_footer_inclusions.html
+[2024-09-30T15:44:48.982139] load_graphers        read       config.yml          
+[2024-09-30T15:44:49.008674] load_graphers        stored     load_graphers(LoadGrapherModule)/graph_template
+[2024-09-30T15:44:49.008689] load_graphers        created    html/graph.template.html
+[2024-09-30T15:44:49.008957] load_graphers        stored     load_graphers(LoadGrapherModule)/graph_full_page_template
+[2024-09-30T15:44:49.008967] load_graphers        created    html/graph_full_page.template.html
+[2024-09-30T15:44:49.009335] load_graphers        created    graphers.json       
+[2024-09-30T15:44:49.009423] load_graphers        stored     load_graphers(LoadGrapherModule)/graphers
+[2024-09-30T15:44:49.037347] get_file_list        read       paths.json          
+[2024-09-30T15:44:49.038973] get_file_list        created    index/excluded_files.json
+[2024-09-30T15:44:49.039423] get_file_list        read       config.yml          
+[2024-09-30T15:44:49.065771] get_file_list        created    index/files.json    
+[2024-09-30T15:44:49.065949] get_file_list        created    index/markdown_files.json
+[2024-09-30T15:44:49.092847] parse_metadata       read       index/markdown_files.json
+[2024-09-30T15:44:49.093134] parse_metadata       read       paths.json          
+[2024-09-30T15:44:49.095242] parse_metadata       created    index/metadata.json 
+[2024-09-30T15:44:49.095976] parse_metadata       read       config.yml          
+[2024-09-30T15:44:49.149528] filter_on_metadata   read       paths.json          
+[2024-09-30T15:44:49.149806] filter_on_metadata   read       index/markdown_files.json
+[2024-09-30T15:44:49.150086] filter_on_metadata   read       index/metadata.json 
+[2024-09-30T15:44:49.150182] filter_on_metadata   altered    index/markdown_files.json
+[2024-09-30T15:44:49.150986] filter_on_metadata   read       config.yml          
+[2024-09-30T15:44:49.177578] filter_on_metadata   read       index/files.json    
+[2024-09-30T15:44:49.177669] filter_on_metadata   altered    index/files.json    
+[2024-09-30T15:44:49.177815] filter_on_metadata   created    excluded_files_by_metadata.json
+[2024-09-30T15:44:49.204555] copy_vault_to_tempdirectory read       config.yml          
+[2024-09-30T15:44:49.231077] copy_vault_to_tempdirectory read       paths.json          
+[2024-09-30T15:44:49.231499] copy_vault_to_tempdirectory stored     copy_vault_to_tempdirectory(VaultCopyModule)/paths
+[2024-09-30T15:44:49.232100] copy_vault_to_tempdirectory altered    paths.json          
+[2024-09-30T15:44:49.232518] copy_vault_to_tempdirectory read       index/files.json    
+[2024-09-30T15:44:49.235042] copy_vault_to_tempdirectory altered    index/files.json    
+[2024-09-30T15:44:49.261947] prepare_output_folders read       paths.json          
+[2024-09-30T15:44:49.262370] prepare_output_folders read       config.yml          
+[2024-09-30T15:44:49.288418] prepare_output_folders read       guid.txt            
+
+(log.resources created by resource_logger module)
