@@ -1,5 +1,2 @@
----
-layout: default
-title: Home
----
+
 
