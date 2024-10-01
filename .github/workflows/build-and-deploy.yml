@@ -50,17 +50,13 @@ jobs:
           gem install bundler
           bundle init
           echo "source 'https://rubygems.org'" >> Gemfile
-          echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
-          echo "group :jekyll_plugins do" >> Gemfile
-          echo "  gem 'jekyll-remote-theme'" >> Gemfile
-          echo "end" >> Gemfile
+          echo "gem 'github-pages'" >> Gemfile
           bundle install 
           bundle update github-pages
 
       # Build the Jekyll site
       - name: Build Jekyll Site
-        run: |
-          bundle exec jekyll build
+        run: bundle exec jekyll build
 
       # Step 3: Deploy to GitHub Pages.
       - name: Deploy to GitHub Pages
