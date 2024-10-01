@@ -49,7 +49,7 @@ jobs:
           gem install bundler
           bundle init
           echo "source 'https://rubygems.org'" >> Gemfile
-          echo "gem 'github-pages'" >> Gemfile
+          echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
           bundle install 
 
       # Build the Jekyll site
