@@ -52,7 +52,6 @@ jobs:
           echo "source 'https://rubygems.org'" >> Gemfile
           echo "gem 'github-pages'" >> Gemfile
           bundle install 
-          bundle update github-pages
 
       # Build the Jekyll site
       - name: Build Jekyll Site
