@@ -58,7 +58,6 @@ jobs:
       - name: Build Jekyll Site
         run: |
           bundle exec jekyll build
-          rm -rf _site/.nojekyll
 
       # Step 3: Deploy to GitHub Pages.
       - name: Deploy to GitHub Pages
