@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Home
+title: <a href="https://github.com/artainmo" style="color:white;">Artainmo</a> Judo
 ---
 
