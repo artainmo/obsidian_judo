@@ -51,6 +51,9 @@ jobs:
           bundle init
           echo "source 'https://rubygems.org'" >> Gemfile
           echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
+          echo "group :jekyll_plugins do" >> Gemfile
+          echo "  gem 'jekyll-remote-theme'" >> Gemfile
+          echo "end" >> Gemfile
           bundle install 
           bundle update github-pages
 
