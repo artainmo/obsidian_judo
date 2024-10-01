@@ -36,6 +36,7 @@ jobs:
         run: |
           make build
           rm -rf Obsidian
+          rm -rf obsidian-html
 
     # Set up Ruby environment
       - name: Setup Ruby
@@ -55,7 +56,9 @@ jobs:
 
       # Build the Jekyll site
       - name: Build Jekyll Site
-        run: bundle exec jekyll build
+        run: |
+          bundle exec jekyll build
+          rm -rf _site/.nojekyll
 
       # Step 3: Deploy to GitHub Pages.
       - name: Deploy to GitHub Pages
