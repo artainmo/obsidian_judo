@@ -5,6 +5,3 @@ url: https://artainmo.github.io
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
-markdown: kramdown
-kramdown:
-  parse_block_html: true # Ensures that block-level HTML tags like <div>, <table>, and others are correctly interpreted by Jekyll.
