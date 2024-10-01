@@ -21,4 +21,4 @@ sed -i '' 's/\[Other\](#Randori\/Shiai notes#Other)/\[Other\](#other-2)/g' index
 sed -i '' 's/\[\[#Shime\/Jime Waza and Kansetsu Waza\]\]/\[Shime\/Jime Waza and Kansetsu Waza\](#shimejime-waza-and-kansetsu-waza)/g' index.md
 sed -i '' 's/\[\[#Randori\/Shiai notes\]\]/\[Randori\/Shiai notes\](#randorishiai-notes)/g' index.md
 
-sed -i '' 's/A variation exists where you drop on one knee to exert more force called \[\[#Eri Seoi Nage\|'drop Tai Otoshi'\]\]./A variation exists where you drop on one knee to exert more force called \['drop Tai Otoshi'\](#eri-seoi-nage)./g' index.md
+sed -i '' "s/A variation exists where you drop on one knee to exert more force called \[\[#Eri Seoi Nage\|'drop Tai Otoshi'\]\]./A variation exists where you drop on one knee to exert more force called \['drop Tai Otoshi'\](#eri-seoi-nage)./g" index.md
