@@ -8,8 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: macos-latest # Ubuntu is generally faster and more cost-efficient for GitHub to run, making it the default choice. For most projects, Linux (Ubuntu) will work just fine even if developed on macOS.
-
+    runs-on: macos-latest # Ubuntu created bugs while using 'sed' thus I stayed on macos.
     steps:
       # Step 1: Download the GitHub repository’s source code to the runner (the virtual machine where the action is being executed). Without this step, the subsequent steps wouldn't have access to the repository's code.
       - name: Checkout the repository
