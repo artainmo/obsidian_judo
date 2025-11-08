@@ -10,6 +10,13 @@ build: # Retrieve the note from obsidian
 	cp Obsidian/Obsidian/Pasted\ image\ 20250309102150.png .
 	cp Obsidian/Obsidian/Pasted\ image\ 20250309104533.png .
 	cp Obsidian/Obsidian/IMG_2375.jpg .
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029165539.png
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029172420.png
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029172920.png
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029174854.png
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029180217.png
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029181424.png
+	cp Obsidian/Obsidian/Pasted\ image\ 20251029183327.png
 
 update: # update obsidian to have latest judo note
 	git submodule update --remote # Git knows what to update thanks to the .gitmodules file
