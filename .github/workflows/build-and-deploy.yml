@@ -38,11 +38,22 @@ jobs:
           rm -rf Obsidian
           rm -rf obsidian-html
 
-    # Set up Ruby environment
+      # macOS runners sometimes have mismatched SSL certificates for Ruby.
+      - name: Fix SSL certificates for Ruby
+        run: |
+          echo "Updating CA certificates..."
+          brew update
+          brew reinstall ca-certificates openssl@3
+          export SSL_CERT_FILE=$(brew --prefix)/etc/ca-certificates/cert.pem
+          export SSL_CERT_DIR=$(brew --prefix)/etc/ca-certificates/certs
+          echo "✅ SSL_CERT_FILE set to: $SSL_CERT_FILE"
+
+      # Set up Ruby environment
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
+          bundler-cache: true
 
       # Install dependencies using bundler
       - name: Install Jekyll dependencies
@@ -55,6 +66,9 @@ jobs:
 
       # Build the Jekyll site
       - name: Build Jekyll Site
+        env:
+          SSL_CERT_FILE: $(brew --prefix)/etc/ca-certificates/cert.pem
+          SSL_CERT_DIR: $(brew --prefix)/etc/ca-certificates/certs
         run: bundle exec jekyll build
 
       # Step 3: Deploy to GitHub Pages.
