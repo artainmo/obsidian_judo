@@ -3,5 +3,3 @@ description: <a href="https://www.chenaie.com/" style="color:white;">@ La Chêna
 baseurl: /obsidian_judo # Only if you're not using a custom domain
 url: https://artainmo.github.io
 theme: jekyll-theme-cayman
-plugins:
-  - jekyll-remote-theme
